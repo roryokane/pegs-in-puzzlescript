@@ -120,6 +120,13 @@ s = Square
 =======
 SOUNDS
 =======
+sfx0 20917302 (fill hole)
+sfx1 60846506 (cycle selected block)
+sfx2 57903306 (confirm selection)
+sfx3 29154902 (destroy through combining)
+sfx9 36821508 (combined blocks don't match)
+startlevel 27686900
+endlevel 2807108
 
 ================
 COLLISIONLAYERS
@@ -134,36 +141,37 @@ RULES
 ======
 
 (allow scrolling through selections without moving player)
-DOWN [ > SelectingPlayer ] [ SelectedTriangle ] -> [ SelectingPlayer ] [ SelectedCross ]
-DOWN [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedSquare ]
-DOWN [ > SelectingPlayer ] [ SelectedSquare ] -> [ SelectingPlayer ] [ SelectedCircle ]
-DOWN [ > SelectingPlayer ] [ SelectedCircle ] -> [ SelectingPlayer ] [ SelectedTriangle ]
-UP [ > SelectingPlayer ] [ SelectedTriangle ] -> [ SelectingPlayer ] [ SelectedCircle ]
-UP [ > SelectingPlayer ] [ SelectedCircle ] -> [ SelectingPlayer ] [ SelectedSquare ]
-UP [ > SelectingPlayer ] [ SelectedSquare ] -> [ SelectingPlayer ] [ SelectedCross ]
-UP [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedTriangle ]
+DOWN [ > SelectingPlayer ] [ SelectedTriangle ] -> [ SelectingPlayer ] [ SelectedCross ] sfx1
+(simpler rules like this don't work for some reason: DOWN [ SelectedTriangle ] -> [ SelectedCross ])
+DOWN [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedSquare ] sfx1
+DOWN [ > SelectingPlayer ] [ SelectedSquare ] -> [ SelectingPlayer ] [ SelectedCircle ] sfx1
+DOWN [ > SelectingPlayer ] [ SelectedCircle ] -> [ SelectingPlayer ] [ SelectedTriangle ] sfx1
+UP [ > SelectingPlayer ] [ SelectedTriangle ] -> [ SelectingPlayer ] [ SelectedCircle ] sfx1
+UP [ > SelectingPlayer ] [ SelectedCircle ] -> [ SelectingPlayer ] [ SelectedSquare ] sfx1
+UP [ > SelectingPlayer ] [ SelectedSquare ] -> [ SelectingPlayer ] [ SelectedCross ] sfx1
+UP [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedTriangle ] sfx1
 [ > SelectingPlayer ] -> [ SelectingPlayer ]
 
 (action confirms selection)
-[ Action SelectingPlayer ] [ SelectedCircle ] -> [ NormalPlayer ] [ Circle ]
-[ Action SelectingPlayer ] [ SelectedSquare ] -> [ NormalPlayer ] [ Square ]
-[ Action SelectingPlayer ] [ SelectedTriangle ] -> [ NormalPlayer ] [ Triangle ]
-[ Action SelectingPlayer ] [ SelectedCross ] -> [ NormalPlayer ] [ Cross ]
+[ Action SelectingPlayer ] [ SelectedCircle ] -> [ NormalPlayer ] [ Circle ] sfx2
+[ Action SelectingPlayer ] [ SelectedSquare ] -> [ NormalPlayer ] [ Square ] sfx2
+[ Action SelectingPlayer ] [ SelectedTriangle ] -> [ NormalPlayer ] [ Triangle ] sfx2
+[ Action SelectingPlayer ] [ SelectedCross ] -> [ NormalPlayer ] [ Cross ] sfx2
 
 (player can push blocks)
 [ > Player | Block ] -> [ > Player | > Block ]
 
 (square pegs fill holes; other pegs fall in and disappear)
-[ > Square | Hole ] -> [ | ]
+[ > Square | Hole ] -> [ | ] sfx0
 [ > Block | Hole ] -> [ | Hole ]
 
 (most like pegs disappear when combined)
-[ > Circle | Circle ] -> [ | ]
-[ > Triangle | Triangle ] -> [ | ]
-[ > Square | Square ] -> [ | ]
+[ > Circle | Circle ] -> [ | ] sfx3
+[ > Triangle | Triangle ] -> [ | ] sfx3
+[ > Square | Square ] -> [ | ] sfx3
 
 (combined crosses let you freely select a replacement)
-[ > Cross | Cross ] [ > Player ] -> [ | SelectedTriangle ] [ > SelectingPlayer ]
+[ > Cross | Cross ] [ > Player ] -> [ | SelectedTriangle ] [ > SelectingPlayer ] sfx3
 
 ==============
 WINCONDITIONS
