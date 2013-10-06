@@ -128,8 +128,8 @@ sfx0 9351102 (fill hole) (old: 20917302)
 sfx1 60846506 (cycle selected block)
 sfx2 57903306 (confirm selection)
 sfx3 29154902 (destroy through combining)
-sfx4 94264508 (push block down hole) (want sweeping like 71860308 but less whiny)
-sfx9 36821508 (combined blocks don't match) (or maybe 23220306, which is less punishing)
+sfx4 94264508 (push block down hole) (would prefer sweeping like 71860308 but less whiny)
+sfx9 36821508 (combined blocks don't match)
 sfx10 3824708 (player falls in hole)
 startlevel 27686900
 endlevel 2807108
