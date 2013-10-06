@@ -9,6 +9,7 @@ homepage http://roryokane.com/
 background_color LightGray
 text_color Black
 key_repeat_interval 0.25 (to prevent accidental falling down pits, etc.)
+run_rules_on_level_start (to draw hole boundaries)
 
 ========
 OBJECTS
@@ -108,6 +109,38 @@ Orange
 Hole
 Black
 
+HoleTopBoundary
+#222
+00000
+.....
+.....
+.....
+.....
+
+HoleBottomBoundary
+#222
+.....
+.....
+.....
+.....
+00000
+
+HoleLeftBoundary
+#222
+0....
+0....
+0....
+0....
+0....
+
+HoleRightBoundary
+#222
+....0
+....0
+....0
+....0
+....0
+
 =======
 LEGEND
 =======
@@ -115,6 +148,7 @@ LEGEND
 Player = NormalPlayer or SelectingPlayer
 SelectedBlock = SelectedCircle or SelectedSquare or SelectedTriangle or SelectedCross
 Block = Circle or Square or Triangle or Cross or SelectedBlock
+HoleBoundary = HoleTopBoundary or HoleBottomBoundary or HoleLeftBoundary or HoleRightBoundary
 
 . = Background
 · = Background
@@ -158,8 +192,11 @@ COLLISIONLAYERS
 ================
 
 Background
-NormalPlayer, Wall, Hole, Block
-SelectingPlayer, SelectedBlock (these never move, so collisions are irrelevant)
+NormalPlayer, Wall, Hole, Block, SelectingPlayer, SelectedBlock
+HoleTopBoundary
+HoleBottomBoundary
+HoleLeftBoundary
+HoleRightBoundary
 
 ======
 RULES
@@ -192,6 +229,13 @@ UP [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedTria
 
 [ > Player | Hole ] -> [ | Hole ] sfx10 message You fell and died.
 
+(TODO run this at level start)
+UP [ Hole no HoleTopBoundary | no Hole ] -> [ Hole HoleTopBoundary | no Hole ]
+DOWN [ Hole no HoleBottomBoundary | no Hole ] -> [ Hole HoleBottomBoundary | no Hole ]
+LEFT [ Hole no HoleLeftBoundary | no Hole ] -> [ Hole HoleLeftBoundary | no Hole ]
+RIGHT [ Hole no HoleRightBoundary | no Hole ] -> [ Hole HoleRightBoundary | no Hole ]
+[ HoleBoundary no Hole ] -> [ ]
+
 (some pegs disappear when combined)
 [ > Circle | Circle ] -> [ | ] sfx3
 [ > Square | Square ] -> [ | ] sfx3
@@ -200,7 +244,7 @@ UP [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedTria
 (combined crosses let you freely select a replacement)
 [ > Cross | Cross ] [ > Player ] -> [ | SelectedTriangle ] [ > SelectingPlayer ] sfx3
 
-(player get scolded if non-matching pegs are combined)
+(player gets scolded if non-matching pegs are combined)
 [ > Circle | Block no Circle ] -> [ Circle | Block ] sfx9 message They don't match.
 [ > Triangle | Block no Triangle ] -> [ Triangle | Block ] sfx9 message They don't match.
 [ > Square | Block no Square ] -> [ Square | Block ] sfx9 message They don't match.
