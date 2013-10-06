@@ -17,8 +17,8 @@ Black
 00.00
 00000
 
-Player
-Black
+NormalPlayer
+Blue
 .000.
 0.0.0
 00000
@@ -26,12 +26,12 @@ Black
 .000.
 
 SelectingPlayer
-White
-.....
-.....
-.....
-.....
-.....
+Gray
+.000.
+0.0.0
+00000
+0.0.0
+.000.
 
 Circle
 Black
@@ -42,7 +42,7 @@ Black
 .000.
 
 SelectedCircle
-Black
+Blue
 .000.
 0...0
 0...0
@@ -58,7 +58,7 @@ Black
 00000
 
 SelectedSquare
-Black
+Blue
 00000
 0...0
 0...0
@@ -74,7 +74,7 @@ Black
 00000
 
 SelectedTriangle
-Black
+Blue
 0....
 00...
 0.0..
@@ -90,7 +90,7 @@ Black
 ..0..
 
 SelectedCross
-Black
+Blue
 ..0..
 ..0..
 00000
@@ -104,10 +104,11 @@ Black
 LEGEND
 =======
 
-Block = Circle or Square or Triangle or Cross
+Player = NormalPlayer or SelectingPlayer
 SelectedBlock = SelectedCircle or SelectedSquare or SelectedTriangle or SelectedCross
+Block = Circle or Square or Triangle or Cross or SelectedBlock
 . = Background
-P = Player
+p = NormalPlayer
 X = Wall
 # = Hole
 O = Circle
@@ -125,12 +126,19 @@ COLLISIONLAYERS
 ================
 
 Background
-Player, Wall, Hole, Block
+NormalPlayer, Wall, Hole, Block
 SelectingPlayer, SelectedBlock
 
 ======
 RULES
 ======
+
+[ > SelectingPlayer ] -> [ SelectingPlayer ]
+DOWN [ > SelectingPlayer ] [ SelectedCircle ] -> [ SelectingPlayer ] [ SelectedSquare ]
+[ Action SelectingPlayer ] [ SelectedCircle ] -> [ NormalPlayer ] [ Circle ]
+[ Action SelectingPlayer ] [ SelectedSquare ] -> [ NormalPlayer ] [ Square ]
+[ Action SelectingPlayer ] [ SelectedTriangle ] -> [ NormalPlayer ] [ Triangle ]
+[ Action SelectingPlayer ] [ SelectedCross ] -> [ NormalPlayer ] [ Cross ]
 
 [ > Player | Block ] -> [ > Player | > Block ]
 
@@ -140,8 +148,7 @@ RULES
 [ > Circle | Circle ] -> [ | ]
 [ > Triangle | Triangle ] -> [ | ]
 [ > Square | Square ] -> [ | ]
-
-[ > Cross | Cross ] [ Player ] -> [ | SelectedCircle ] [ SelectingPlayer ]
+[ > Cross | Cross ] [ > Player ] -> [ | SelectedCircle ] [ > SelectingPlayer ]
 
 ==============
 WINCONDITIONS
@@ -155,7 +162,7 @@ LEVELS
 
 XXXXXXXXXXXX
 X..........X
-X...P..O...X
+X...p..O...X
 X....++\...X
 X...s#.O...X
 X..........X
