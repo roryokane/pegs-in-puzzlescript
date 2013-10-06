@@ -282,7 +282,7 @@ LEVELS
 =======
 
 (help)
-(message To beat each level you must
+message To beat each level you must
 message destroy all of the pegs.
 message If two like pegs are
 message pushed into each other
@@ -290,7 +290,7 @@ message they disappear,
 message except for triangles
 message which form a solid block
 message and plusses which allow you to
-message choose a replacement block.)
+message choose a replacement block.
 
 XXXXXXXXXXXX
 X··········X
