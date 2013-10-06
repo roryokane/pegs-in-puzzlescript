@@ -18,7 +18,7 @@ Black
 00000
 
 NormalPlayer
-Blue
+Orange
 .000.
 0.0.0
 00000
@@ -26,7 +26,7 @@ Blue
 .000.
 
 SelectingPlayer
-Gray
+LightGray
 .000.
 0.0.0
 00000
@@ -34,7 +34,7 @@ Gray
 .000.
 
 Circle
-Black
+DarkGray
 .000.
 0...0
 0...0
@@ -42,7 +42,7 @@ Black
 .000.
 
 SelectedCircle
-Blue
+Orange
 .000.
 0...0
 0...0
@@ -50,7 +50,7 @@ Blue
 .000.
 
 Square
-Black
+DarkGray
 00000
 0...0
 0...0
@@ -58,7 +58,7 @@ Black
 00000
 
 SelectedSquare
-Blue
+Orange
 00000
 0...0
 0...0
@@ -66,7 +66,7 @@ Blue
 00000
 
 Triangle
-Black
+DarkGray
 0....
 00...
 0.0..
@@ -74,7 +74,7 @@ Black
 00000
 
 SelectedTriangle
-Blue
+Orange
 0....
 00...
 0.0..
@@ -82,7 +82,7 @@ Blue
 00000
 
 Cross
-Black
+DarkGray
 ..0..
 ..0..
 00000
@@ -90,7 +90,7 @@ Black
 ..0..
 
 SelectedCross
-Blue
+Orange
 ..0..
 ..0..
 00000
@@ -128,9 +128,11 @@ sfx0 9351102 (fill hole) (old: 20917302)
 sfx1 60846506 (cycle selected block)
 sfx2 57903306 (confirm selection)
 sfx3 29154902 (destroy through combining)
-sfx4 94264508 (push block down hole) (would prefer sweeping like 71860308 but less whiny)
+sfx4 94264508 (push block down hole) (would prefer sweeping, like 71860308 but less whiny)
+sfx5 93422102 (combine triangles, forming a wall)
 sfx9 36821508 (combined blocks don't match)
 sfx10 3824708 (player falls in hole)
+Block move 40186307
 startlevel 27686900
 endlevel 2807108
 
@@ -173,11 +175,11 @@ UP [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedTria
 
 [ > Player | Hole ] -> [ | Hole ] sfx10 message You fell and died.
 
-(most like pegs disappear when combined)
+(some pegs disappear when combined)
 [ > Circle | Circle ] -> [ | ] sfx3
-[ > Triangle | Triangle ] -> [ | ] sfx3
 [ > Square | Square ] -> [ | ] sfx3
-
+(combined triangles turn into a wall)
+[ > Triangle | Triangle ] -> [ | Wall ] sfx5
 (combined crosses let you freely select a replacement)
 [ > Cross | Cross ] [ > Player ] -> [ | SelectedTriangle ] [ > SelectingPlayer ] sfx3
 
