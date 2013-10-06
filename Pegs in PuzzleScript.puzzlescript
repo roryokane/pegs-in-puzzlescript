@@ -1,6 +1,9 @@
 title Pegs
 author Fred Coughlin / Rory O'Kane
 homepage http://www.detachedsolutions.com/puzzpack/pegs.php
+(homepage of the porter to PuzzleScript is http://roryokane.com/)
+background_color LightGray
+text_color Black
 
 ========
 OBJECTS
@@ -124,7 +127,7 @@ s = Square
 =======
 SOUNDS
 =======
-sfx0 9351102 (fill hole) (old: 20917302)
+sfx0 9351102 (fill hole)
 sfx1 60846506 (cycle selected block)
 sfx2 57903306 (confirm selection)
 sfx3 29154902 (destroy through combining)
