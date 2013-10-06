@@ -116,6 +116,7 @@ NonTriangleBlock = Circle or Square or Cross or SelectedBlock
 NonCrossBlock = Circle or Square or Triangle or SelectedBlock
 
 . = Background
+· = Background
 p = NormalPlayer
 P = NormalPlayer
 ✠ = NormalPlayer
@@ -123,7 +124,6 @@ X = Wall
 ⛝ = Wall
 # = Hole
 ■ = Hole
-O = Circle
 o = Circle
 ○ = Circle
 s = Square
@@ -214,31 +214,31 @@ LEVELS
 =======
 
 XXXXXXXXXXXX
-X..........X
-X...✠..o...X
-X....++<...X
-X...□#.o...X
-X..........X
+X··········X
+X···P··o···X
+X····++<···X
+X···□■·o···X
+X··········X
 XXXXXXXXXXXX
 
 message Nice Pegging!!!
 
 XXXXXXXXXXXX
-XXX...<<...X
-XXX...X....X
-XXX...XX...X
-✠...<<oo...X
-XXX...XX...X
-XXX...X....X
-XXX...<<...X
+XXX···<<···X
+XXX···X····X
+XXX···XX···X
+P···<<oo···X
+XXX···XX···X
+XXX···X····X
+XXX···<<···X
 
 message Nice Pegging!!!
 
 XXXXXXXXXXXX
 XXXXXXXXXXXX
-X.....<.✠...
-X.XX.XX.XX<X
-X..<.......X
+X·····<·P···
+X·XX·XX·XX<X
+X··<·······X
 XXXXXXXXXX<X
 XXXXXXXXXXXX
 XXXXXXXXXXXX
@@ -246,133 +246,133 @@ XXXXXXXXXXXX
 message Nice Pegging!!!
 
 XXXXXXXXXXXX
-#.□.<.<....X
-#.+.o.<....X
-#.o.□✠<....X
-#.<.□.<.+..X
-#.□.o.<....X
-#.o.□.<....X
+■·□·<·<····X
+■·+·o·<····X
+■·o·□P<····X
+■·<·□·<·+··X
+■·□·o·<····X
+■·o·□·<····X
 XXXXXXXXXXXX
 
 message Nice Pegging!!!
 
-.##.□#..#...
-.##.□□..#..<
-<##.###.X<<<
-.##.#□#.X<.<
-.##.#✠#o#...
-<##.###.#...
-.##.□...#...
+·■■·□■··■···
+·■■·□□··■··<
+<■■·■■■·X<<<
+·■■·■□■·X<·<
+·■■·■P■o■···
+<■■·■■■·■···
+·■■·□···■···
 
 message Nice Pegging!!!
 
-✠...........
-<.........+.
-<..<...<<...
-.XX<XXXXXXX.
-............
-.XXXX.XX.XXX
-.+......o□#.
-...XXXX..XXX
+P···········
+<·········+·
+<··<···<<···
+·XX<XXXXXXX·
+············
+·XXXX·XX·XXX
+·+······o□■·
+···XXXX··XXX
 
 message Nice Pegging!!!
 
-XXXX..XXXXXX
-XXX#..□#.XXX
-XXXX.XoX.XXX
-XXX<++✠□<#XX
-XXXX.X<X...X
-XXXX..o..X.X
-XXXXXXX.XX.X
-XXXXXXX....X
-
-message Nice Pegging!!!
-
-XXXXXXXXXXXX
-..+++++□++..
-..+++<++o+..
-✠.+++<++□+..
-..++□o++++..
-..++o<++++..
-..++<□++++..
-XXXXXXXXXXXX
-
-message Nice Pegging!!!
-
-....XX......
-.+..XX......
-....<□□+.XX.
-.X..<X...XXX
-...<<✠X....<
-....<X..XXXX
-.+X.<oo...+.
-....□X......
-
-message Nice Pegging!!!
-
-XXXX<XXX....
-XXXX.XXX...✠
-..□.###...+.
-.++.###.□+□.
-.++.###.□+□.
-....###.+...
-XXXXX.XX....
-XXXXX<XX....
-
-message Nice Pegging!!!
-
-X✠X.XX#..XXX
-X...o□##.<<.
-X<X<.X#..<<.
-X..<.X...++.
-X<X..X.X.++.
-.....X.XX.X.
-.+□+.X.X....
-....<<<XXXXX
-
-message Nice Pegging!!!
-
-✠.....XXXXXX
-X<X<X<XX...X
-......X..X.X
-X<X<X<X....X
-......XXoo#X
-X<X<X<XX.<<X
-..........<X
-X.XXXXXX..XX
+XXXX··XXXXXX
+XXX■··□■·XXX
+XXXX·XoX·XXX
+XXX<++P□<■XX
+XXXX·X<X···X
+XXXX··o··X·X
+XXXXXXX·XX·X
+XXXXXXX····X
 
 message Nice Pegging!!!
 
 XXXXXXXXXXXX
-..□.<.o.□..#
-..<.o.<.□..#
-✠.+.□.o.□..#
-..o.□.<.□..#
-..□.<.o.□..#
-..+.+.<.□..#
+··+++++□++··
+··+++<++o+··
+P·+++<++□+··
+··++□o++++··
+··++o<++++··
+··++<□++++··
 XXXXXXXXXXXX
 
 message Nice Pegging!!!
 
-XXXXX..X..XX
-XX.<..□..<.X
-X#..oX.XX..X
-XXX..+o+..XX
-XX..XX.Xo..#
-XX.<..□...✠X
-XX..X..XXXXX
+····XX······
+·+··XX······
+····<□□+·XX·
+·X··<X···XXX
+···<<PX····<
+····<X··XXXX
+·+X·<oo···+·
+····□X······
+
+message Nice Pegging!!!
+
+XXXX<XXX····
+XXXX·XXX···P
+··□·■■■···+·
+·++·■■■·□+□·
+·++·■■■·□+□·
+····■■■·+···
+XXXXX·XX····
+XXXXX<XX····
+
+message Nice Pegging!!!
+
+XPX·XX■··XXX
+X···o□■■·<<·
+X<X<·X■··<<·
+X··<·X···++·
+X<X··X·X·++·
+·····X·XX·X·
+·+□+·X·X····
+····<<<XXXXX
+
+message Nice Pegging!!!
+
+P·····XXXXXX
+X<X<X<XX···X
+······X··X·X
+X<X<X<X····X
+······XXoo■X
+X<X<X<XX·<<X
+··········<X
+X·XXXXXX··XX
+
+message Nice Pegging!!!
+
+XXXXXXXXXXXX
+··□·<·o·□··■
+··<·o·<·□··■
+P·+·□·o·□··■
+··o·□·<·□··■
+··□·<·o·□··■
+··+·+·<·□··■
 XXXXXXXXXXXX
 
 message Nice Pegging!!!
 
-...#.#.#.#.X
-...#.#.#.#.X
-.+□#.#.#.#.<
-.□.#.#□#.#.X
-.+.#.#.#.#.X
-✠..#□#.#.#.X
-..□#.#.#□#.X
-..□#.#.#.#.X
+XXXXX··X··XX
+XX·<··□··<·X
+X■··oX·XX··X
+XXX··+o+··XX
+XX··XX·Xo··■
+XX·<··□···PX
+XX··X··XXXXX
+XXXXXXXXXXXX
+
+message Nice Pegging!!!
+
+···■·■·■·■·X
+···■·■·■·■·X
+·+□■·■·■·■·<
+·□·■·■□■·■·X
+·+·■·■·■·■·X
+P··■□■·■·■·X
+··□■·■·■□■·X
+··□■·■·■·■·X
 
 message Congratulations!
 message You finished Pegs!
