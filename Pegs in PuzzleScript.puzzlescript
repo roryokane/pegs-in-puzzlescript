@@ -7,6 +7,7 @@ homepage http://roryokane.com/
 (homepage of the original Pegs is http://www.detachedsolutions.com/puzzpack/pegs.php)
 background_color LightGray
 text_color Black
+key_repeat_interval 0.25 (to prevent accidental falling down pits, etc.)
 
 ========
 OBJECTS
@@ -16,11 +17,11 @@ Background
 White
 
 Wall
-Black
+#222 #333 #444
 00000
-00.00
-0.0.0
-00.00
+01.10
+0.2.0
+01.10
 00000
 
 NormalPlayer
@@ -141,16 +142,17 @@ s = Square
 =======
 SOUNDS
 =======
-sfx0 9351102 (fill hole)
+sfx0 9351102 (33289708) (fill hole with square block)
 sfx1 60846506 (cycle selected block)
 sfx2 57903306 (confirm selection)
 sfx3 29154902 (destroy through combining)
-sfx4 94264508 (push block down hole) (would prefer sweeping, like 71860308 but less whiny)
+sfx4 39221701 (push block down hole)
 sfx5 93422102 (combine triangles, forming a wall)
 sfx9 36821508 (combined blocks don't match)
 sfx10 3824708 (player falls in hole)
 Block move 40186307
 startlevel 27686900
+restart 73263508
 endlevel 2807108
 
 ================
@@ -266,6 +268,8 @@ message Nice Pegging!!!
 ·■■·■P■o■···
 <■■·■■■·■···
 ·■■·□···■···
+·■■··o··■oo·
+
 
 message Nice Pegging!!!
 
