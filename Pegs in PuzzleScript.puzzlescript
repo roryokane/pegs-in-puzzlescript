@@ -115,10 +115,6 @@ LEGEND
 Player = NormalPlayer or SelectingPlayer
 SelectedBlock = SelectedCircle or SelectedSquare or SelectedTriangle or SelectedCross
 Block = Circle or Square or Triangle or Cross or SelectedBlock
-NonCircleBlock = Square or Triangle or Cross or SelectedBlock
-NonSquareBlock = Circle or Triangle or Cross or SelectedBlock
-NonTriangleBlock = Circle or Square or Cross or SelectedBlock
-NonCrossBlock = Circle or Square or Triangle or SelectedBlock
 
 . = Background
 · = Background
@@ -205,10 +201,10 @@ UP [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedTria
 [ > Cross | Cross ] [ > Player ] -> [ | SelectedTriangle ] [ > SelectingPlayer ] sfx3
 
 (player get scolded if non-matching pegs are combined)
-[ > Circle | NonCircleBlock ] -> [ Circle | NonCircleBlock ] sfx9 message They don't match.
-[ > Triangle | NonTriangleBlock ] -> [ Triangle | NonTriangleBlock ] sfx9 message They don't match.
-[ > Square | NonSquareBlock ] -> [ Square | NonSquareBlock ] sfx9 message They don't match.
-[ > Cross | NonCrossBlock ] -> [ Cross | NonCrossBlock ] sfx9 message They don't match.
+[ > Circle | Block no Circle ] -> [ Circle | Block ] sfx9 message They don't match.
+[ > Triangle | Block no Triangle ] -> [ Triangle | Block ] sfx9 message They don't match.
+[ > Square | Block no Square ] -> [ Square | Block ] sfx9 message They don't match.
+[ > Cross | Block no Cross ] -> [ Cross | Block ] sfx9 message They don't match.
 
 ==============
 WINCONDITIONS
