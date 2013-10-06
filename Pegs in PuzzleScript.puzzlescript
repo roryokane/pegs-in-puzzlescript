@@ -1,7 +1,10 @@
+(The game Pegs for the TI-83+ graphing calculator, ported to the PuzzleScript engine.)
+(The original Pegs was part of PuzzPack by Detached Solutions, and its main developer was Fred Coughlin. This port is by Rory O’Kane.)
+
 title Pegs
 author Fred Coughlin / Rory O'Kane
-homepage http://www.detachedsolutions.com/puzzpack/pegs.php
-(homepage of the porter to PuzzleScript is http://roryokane.com/)
+homepage http://roryokane.com/
+(homepage of the original Pegs is http://www.detachedsolutions.com/puzzpack/pegs.php)
 background_color LightGray
 text_color Black
 
