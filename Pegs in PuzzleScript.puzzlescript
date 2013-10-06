@@ -17,7 +17,7 @@ Background
 White
 
 Wall
-#222 #333 #444
+#111 #222 #333
 00000
 01.10
 0.2.0
@@ -142,7 +142,7 @@ s = Square
 =======
 SOUNDS
 =======
-sfx0 9351102 (33289708) (fill hole with square block)
+sfx0 9351102 (fill hole with square block)
 sfx1 60846506 (cycle selected block)
 sfx2 57903306 (confirm selection)
 sfx3 29154902 (destroy through combining)
@@ -150,7 +150,8 @@ sfx4 39221701 (push block down hole)
 sfx5 93422102 (combine triangles, forming a wall)
 sfx9 36821508 (combined blocks don't match)
 sfx10 3824708 (player falls in hole)
-Block move 40186307
+Block move 16776907
+undo 418707
 startlevel 27686900
 restart 73263508
 endlevel 2807108
@@ -224,6 +225,7 @@ X···P··o···X
 X····++<···X
 X···□■·o···X
 X··········X
+X··········X
 XXXXXXXXXXXX
 
 message Nice Pegging!!!
@@ -269,7 +271,6 @@ message Nice Pegging!!!
 <■■·■■■·■···
 ·■■·□···■···
 ·■■··o··■oo·
-
 
 message Nice Pegging!!!
 
