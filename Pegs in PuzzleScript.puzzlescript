@@ -159,7 +159,7 @@ COLLISIONLAYERS
 
 Background
 NormalPlayer, Wall, Hole, Block
-SelectingPlayer, SelectedBlock (they never move, so collisions are irrelevant)
+SelectingPlayer, SelectedBlock (these never move, so collisions are irrelevant)
 
 ======
 RULES
