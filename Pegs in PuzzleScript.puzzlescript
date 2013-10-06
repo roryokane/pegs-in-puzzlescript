@@ -11,6 +11,7 @@ text_color Black
 key_repeat_interval 0.25 (to prevent accidental falling down pits, etc.)
 run_rules_on_level_start (to draw hole boundaries)
 
+
 ========
 OBJECTS
 ========
@@ -46,6 +47,7 @@ SelectingPlayer
 12321
 0.2.0
 .010.
+
 
 (peg colors are HUSL pastel Saturation 100%, Lightness 25% and 85%)
 (insides of selected pegs are 50% Saturation)
@@ -114,6 +116,7 @@ SelectedCross
 ..0..
 ..0..
 
+
 Hole
 Black
 
@@ -149,7 +152,8 @@ HoleRightBoundary
 ....0
 ....0
 
-RestartReadyDeadPlayer
+
+InvisibleDeadPlayer
 White
 .....
 .....
@@ -157,11 +161,12 @@ White
 .....
 .....
 
+
 =======
 LEGEND
 =======
 
-Player = NormalPlayer or SelectingPlayer or RestartReadyDeadPlayer
+Player = NormalPlayer or SelectingPlayer or InvisibleDeadPlayer
 SelectedBlock = SelectedCircle or SelectedSquare or SelectedTriangle or SelectedCross
 Block = Circle or Square or Triangle or Cross or SelectedBlock
 HoleBoundary = HoleTopBoundary or HoleBottomBoundary or HoleLeftBoundary or HoleRightBoundary
@@ -203,6 +208,7 @@ startlevel 27686900
 restart 73263508
 endlevel 2807108
 
+
 ================
 COLLISIONLAYERS
 ================
@@ -213,6 +219,7 @@ HoleTopBoundary
 HoleBottomBoundary
 HoleLeftBoundary
 HoleRightBoundary
+
 
 ======
 RULES
@@ -231,8 +238,8 @@ UP [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedTria
 [ > SelectingPlayer ] -> [ SelectingPlayer ]
 
 (you can't move when you're dead)
-[ > RestartReadyDeadPlayer ] -> [ RestartReadyDeadPlayer ]
-[ Action RestartReadyDeadPlayer ] -> restart
+[ > InvisibleDeadPlayer ] -> [ InvisibleDeadPlayer ]
+[ Action InvisibleDeadPlayer ] -> restart
 
 (action confirms selection)
 [ Action SelectingPlayer ] [ SelectedCircle ] -> [ NormalPlayer ] [ Circle ] sfx2
@@ -248,7 +255,7 @@ UP [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedTria
 [ > Block | Hole ] -> [ | Hole ] sfx4
 
 (when you fall down a hole, you must reset or undo)
-[ > Player | Hole ] -> [ RestartReadyDeadPlayer | Hole ] sfx10 message You fell and died.
+[ > Player | Hole ] -> [ InvisibleDeadPlayer | Hole ] sfx10 message You fell and died.
 
 (draw hole boundaries)
 UP [ Hole no HoleTopBoundary | no Hole ] -> [ Hole HoleTopBoundary | no Hole ]
@@ -271,11 +278,13 @@ RIGHT [ Hole no HoleRightBoundary | no Hole ] -> [ Hole HoleRightBoundary | no H
 [ > Square | Block no Square ] -> [ Square | Block ] sfx9 message They don't match.
 [ > Cross | Block no Cross ] -> [ Cross | Block ] sfx9 message They don't match.
 
+
 ==============
 WINCONDITIONS
 ==============
 
 No Block
+
 
 =======
 LEVELS
