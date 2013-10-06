@@ -141,11 +141,19 @@ HoleRightBoundary
 ....0
 ....0
 
+RestartReadyDeadPlayer
+White
+.....
+.....
+.....
+.....
+.....
+
 =======
 LEGEND
 =======
 
-Player = NormalPlayer or SelectingPlayer
+Player = NormalPlayer or SelectingPlayer or RestartReadyDeadPlayer
 SelectedBlock = SelectedCircle or SelectedSquare or SelectedTriangle or SelectedCross
 Block = Circle or Square or Triangle or Cross or SelectedBlock
 HoleBoundary = HoleTopBoundary or HoleBottomBoundary or HoleLeftBoundary or HoleRightBoundary
@@ -192,7 +200,7 @@ COLLISIONLAYERS
 ================
 
 Background
-NormalPlayer, Wall, Hole, Block, SelectingPlayer, SelectedBlock
+Player Wall, Hole, Block, SelectedBlock
 HoleTopBoundary
 HoleBottomBoundary
 HoleLeftBoundary
@@ -214,6 +222,10 @@ UP [ > SelectingPlayer ] [ SelectedSquare ] -> [ SelectingPlayer ] [ SelectedCro
 UP [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedTriangle ] sfx1
 [ > SelectingPlayer ] -> [ SelectingPlayer ]
 
+(you can't move when you're dead)
+[ > RestartReadyDeadPlayer ] -> [ RestartReadyDeadPlayer ]
+[ Action RestartReadyDeadPlayer ] -> restart
+
 (action confirms selection)
 [ Action SelectingPlayer ] [ SelectedCircle ] -> [ NormalPlayer ] [ Circle ] sfx2
 [ Action SelectingPlayer ] [ SelectedSquare ] -> [ NormalPlayer ] [ Square ] sfx2
@@ -227,9 +239,10 @@ UP [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedTria
 [ > Square | Hole ] -> [ | ] sfx0
 [ > Block | Hole ] -> [ | Hole ] sfx4
 
-[ > Player | Hole ] -> [ | Hole ] sfx10 message You fell and died.
+(when you fall down a hole, you must reset or undo)
+[ > Player | Hole ] -> [ RestartReadyDeadPlayer | Hole ] sfx10 message You fell and died.
 
-(TODO run this at level start)
+(draw hole boundaries)
 UP [ Hole no HoleTopBoundary | no Hole ] -> [ Hole HoleTopBoundary | no Hole ]
 DOWN [ Hole no HoleBottomBoundary | no Hole ] -> [ Hole HoleBottomBoundary | no Hole ]
 LEFT [ Hole no HoleLeftBoundary | no Hole ] -> [ Hole HoleLeftBoundary | no Hole ]
@@ -259,6 +272,17 @@ No Block
 =======
 LEVELS
 =======
+
+(help)
+(message To beat each level you must
+message destroy all of the pegs.
+message If two like pegs are
+message pushed into each other
+message they disappear,
+message except for triangles
+message which form a solid block
+message and plusses which allow you to
+message choose a replacement block.)
 
 XXXXXXXXXXXX
 X··········X
