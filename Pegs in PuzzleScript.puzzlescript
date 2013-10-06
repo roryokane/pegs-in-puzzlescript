@@ -117,8 +117,43 @@ SelectedCross
 ..0..
 
 
-Hole
+EmptyHole
 Black
+
+(the colors of falling pegs have 50% of original Lightness)
+
+HoleWithFallingCircle
+Black #20220d #64664e
+00000
+00100
+01210
+00100
+00000
+
+(will not use falling square; change this to cover whole hole in HoleWithSettlingSquare)
+HoleWithSettlingSquare
+Black #0b232c #396b7f
+00000
+01110
+01210
+01110
+00000
+
+HoleWithFallingTriangle
+Black #0c2518 #4e6b5a
+00000
+01000
+01200
+01110
+00000
+
+HoleWithFallingCross
+Black #301b1f
+00000
+00100
+01110
+00100
+00000
 
 HoleTopBoundary
 #222
@@ -170,6 +205,7 @@ Player = NormalPlayer or SelectingPlayer or InvisibleDeadPlayer
 SelectedBlock = SelectedCircle or SelectedSquare or SelectedTriangle or SelectedCross
 Block = Circle or Square or Triangle or Cross or SelectedBlock
 HoleBoundary = HoleTopBoundary or HoleBottomBoundary or HoleLeftBoundary or HoleRightBoundary
+Hole = EmptyHole or HoleWithFallingCircle or HoleWithFallingSquare or HoleWithFallingTriangle or HoleWithFallingCross
 
 . = Background
 · = Background
@@ -178,8 +214,8 @@ P = NormalPlayer
 ✠ = NormalPlayer
 X = Wall
 ⛝ = Wall
-# = Hole
-■ = Hole
+# = EmptyHole
+■ = EmptyHole
 o = Circle
 ○ = Circle
 s = Square
@@ -251,7 +287,13 @@ UP [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedTria
 [ > Player | Block ] -> [ > Player | > Block ]
 
 (square pegs fill holes; other pegs fall in and disappear)
+[ HoleWithFallingCircle ] -> [ EmptyHole ]
+[ HoleWithFallingTriangle ] -> [ EmptyHole ]
+[ HoleWithFallingCross ] -> [ EmptyHole ]
 [ > Square | Hole ] -> [ | ] sfx0
+[ > Circle | Hole ] -> [ | HoleWithFallingCircle ] sfx4 again
+[ > Triangle | Hole ] -> [ | HoleWithFallingTriangle ] sfx4 again
+[ > Cross | Hole ] -> [ | HoleWithFallingCross ] sfx4 again
 [ > Block | Hole ] -> [ | Hole ] sfx4
 
 (when you fall down a hole, you must reset or undo)
