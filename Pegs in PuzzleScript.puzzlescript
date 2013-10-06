@@ -114,14 +114,25 @@ NonCircleBlock = Square or Triangle or Cross or SelectedBlock
 NonSquareBlock = Circle or Triangle or Cross or SelectedBlock
 NonTriangleBlock = Circle or Square or Cross or SelectedBlock
 NonCrossBlock = Circle or Square or Triangle or SelectedBlock
+
 . = Background
 p = NormalPlayer
+P = NormalPlayer
+✠ = NormalPlayer
 X = Wall
+⛝ = Wall
 # = Hole
+■ = Hole
 O = Circle
+o = Circle
+○ = Circle
 s = Square
+□ = Square
 \ = Triangle
+< = Triangle
+◺ = Triangle
 + = Cross
+✚ = Cross
 
 
 =======
@@ -204,151 +215,151 @@ LEVELS
 
 XXXXXXXXXXXX
 X..........X
-X...p..O...X
-X....++\...X
-X...s#.O...X
+X...✠..o...X
+X....++<...X
+X...□#.o...X
 X..........X
 XXXXXXXXXXXX
 
 message Nice Pegging!!!
 
 XXXXXXXXXXXX
-XXX...\\...X
+XXX...<<...X
 XXX...X....X
 XXX...XX...X
-p...\\OO...X
+✠...<<oo...X
 XXX...XX...X
 XXX...X....X
-XXX...\\...X
+XXX...<<...X
 
 message Nice Pegging!!!
 
 XXXXXXXXXXXX
 XXXXXXXXXXXX
-X.....\.p...
-X.XX.XX.XX\X
-X..\.......X
-XXXXXXXXXX\X
+X.....<.✠...
+X.XX.XX.XX<X
+X..<.......X
+XXXXXXXXXX<X
 XXXXXXXXXXXX
 XXXXXXXXXXXX
 
 message Nice Pegging!!!
 
 XXXXXXXXXXXX
-#.s.\.\....X
-#.+.O.\....X
-#.O.sp\....X
-#.\.s.\.+..X
-#.s.O.\....X
-#.O.s.\....X
+#.□.<.<....X
+#.+.o.<....X
+#.o.□✠<....X
+#.<.□.<.+..X
+#.□.o.<....X
+#.o.□.<....X
 XXXXXXXXXXXX
 
 message Nice Pegging!!!
 
-.##.s#..#...
-.##.ss..#..\
-\##.###.X\\\
-.##.#s#.X\.\
-.##.#p#O#...
-\##.###.#...
-.##.s...#...
+.##.□#..#...
+.##.□□..#..<
+<##.###.X<<<
+.##.#□#.X<.<
+.##.#✠#o#...
+<##.###.#...
+.##.□...#...
 
 message Nice Pegging!!!
 
-p...........
-\.........+.
-\..\...\\...
-.XX\XXXXXXX.
+✠...........
+<.........+.
+<..<...<<...
+.XX<XXXXXXX.
 ............
 .XXXX.XX.XXX
-.+......Os#.
+.+......o□#.
 ...XXXX..XXX
 
 message Nice Pegging!!!
 
 XXXX..XXXXXX
-XXX#..s#.XXX
-XXXX.XOX.XXX
-XXX\++ps\#XX
-XXXX.X\X...X
-XXXX..O..X.X
+XXX#..□#.XXX
+XXXX.XoX.XXX
+XXX<++✠□<#XX
+XXXX.X<X...X
+XXXX..o..X.X
 XXXXXXX.XX.X
 XXXXXXX....X
 
 message Nice Pegging!!!
 
 XXXXXXXXXXXX
-..+++++s++..
-..+++\++O+..
-p.+++\++s+..
-..++sO++++..
-..++O\++++..
-..++\s++++..
+..+++++□++..
+..+++<++o+..
+✠.+++<++□+..
+..++□o++++..
+..++o<++++..
+..++<□++++..
 XXXXXXXXXXXX
 
 message Nice Pegging!!!
 
 ....XX......
 .+..XX......
-....\ss+.XX.
-.X..\X...XXX
-...\\pX....\
-....\X..XXXX
-.+X.\OO...+.
-....sX......
+....<□□+.XX.
+.X..<X...XXX
+...<<✠X....<
+....<X..XXXX
+.+X.<oo...+.
+....□X......
 
 message Nice Pegging!!!
 
-XXXX\XXX....
-XXXX.XXX...p
-..s.###...+.
-.++.###.s+s.
-.++.###.s+s.
+XXXX<XXX....
+XXXX.XXX...✠
+..□.###...+.
+.++.###.□+□.
+.++.###.□+□.
 ....###.+...
 XXXXX.XX....
-XXXXX\XX....
+XXXXX<XX....
 
 message Nice Pegging!!!
 
-XpX.XX#..XXX
-X...Os##.\\.
-X\X\.X#..\\.
-X..\.X...++.
-X\X..X.X.++.
+X✠X.XX#..XXX
+X...o□##.<<.
+X<X<.X#..<<.
+X..<.X...++.
+X<X..X.X.++.
 .....X.XX.X.
-.+s+.X.X....
-....\\\XXXXX
+.+□+.X.X....
+....<<<XXXXX
 
 message Nice Pegging!!!
 
-p.....XXXXXX
-X\X\X\XX...X
+✠.....XXXXXX
+X<X<X<XX...X
 ......X..X.X
-X\X\X\X....X
-......XXOO#X
-X\X\X\XX.\\X
-..........\X
+X<X<X<X....X
+......XXoo#X
+X<X<X<XX.<<X
+..........<X
 X.XXXXXX..XX
 
 message Nice Pegging!!!
 
 XXXXXXXXXXXX
-..s.\.O.s..#
-..\.O.\.s..#
-p.+.s.O.s..#
-..O.s.\.s..#
-..s.\.O.s..#
-..+.+.\.s..#
+..□.<.o.□..#
+..<.o.<.□..#
+✠.+.□.o.□..#
+..o.□.<.□..#
+..□.<.o.□..#
+..+.+.<.□..#
 XXXXXXXXXXXX
 
 message Nice Pegging!!!
 
 XXXXX..X..XX
-XX.\..s..\.X
-X#..OX.XX..X
-XXX..+O+..XX
-XX..XX.XO..#
-XX.\..s...pX
+XX.<..□..<.X
+X#..oX.XX..X
+XXX..+o+..XX
+XX..XX.Xo..#
+XX.<..□...✠X
 XX..X..XXXXX
 XXXXXXXXXXXX
 
@@ -356,12 +367,12 @@ message Nice Pegging!!!
 
 ...#.#.#.#.X
 ...#.#.#.#.X
-.+s#.#.#.#.\
-.s.#.#s#.#.X
+.+□#.#.#.#.<
+.□.#.#□#.#.X
 .+.#.#.#.#.X
-p..#s#.#.#.X
-..s#.#.#s#.X
-..s#.#.#.#.X
+✠..#□#.#.#.X
+..□#.#.#□#.X
+..□#.#.#.#.X
 
 message Congratulations!
 message You finished Pegs!
