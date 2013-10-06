@@ -120,11 +120,13 @@ s = Square
 =======
 SOUNDS
 =======
-sfx0 20917302 (fill hole)
+sfx0 9351102 (fill hole) (old: 20917302)
 sfx1 60846506 (cycle selected block)
 sfx2 57903306 (confirm selection)
 sfx3 29154902 (destroy through combining)
-sfx9 36821508 (combined blocks don't match)
+sfx4 94264508 (push block down hole) (want sweeping like 71860308 but less whiny)
+sfx9 36821508 (combined blocks don't match) (or maybe 23220306, which is less punishing)
+sfx10 3824708 (player falls in hole)
 startlevel 27686900
 endlevel 2807108
 
@@ -163,12 +165,19 @@ UP [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedTria
 
 (square pegs fill holes; other pegs fall in and disappear)
 [ > Square | Hole ] -> [ | ] sfx0
-[ > Block | Hole ] -> [ | Hole ]
+[ > Block | Hole ] -> [ | Hole ] sfx4
+
+[ > Player | Hole ] -> [ | Hole ] sfx10 message You fell and died.
 
 (most like pegs disappear when combined)
 [ > Circle | Circle ] -> [ | ] sfx3
 [ > Triangle | Triangle ] -> [ | ] sfx3
 [ > Square | Square ] -> [ | ] sfx3
+
+(player get scolded if non-matching pegs are combined)
+[ > Circle | Block ] [ > Circle | no Circle ] -> [ Circle | Block ] [ Circle | ] sfx3
+[ > Triangle | Block ] [ > Triangle | no Triangle ] -> [ | ] sfx3
+[ > Square | Block ] [ > Square | no Square ] -> [ | ] sfx3
 
 (combined crosses let you freely select a replacement)
 [ > Cross | Cross ] [ > Player ] -> [ | SelectedTriangle ] [ > SelectingPlayer ] sfx3
