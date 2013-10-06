@@ -15,6 +15,8 @@ run_rules_on_level_start (to draw hole boundaries)
 OBJECTS
 ========
 
+(some colors chosen using HUSL: http://boronine.com/husl/)
+
 Background
 White
 
@@ -27,23 +29,29 @@ Wall
 00000
 
 NormalPlayer
-Orange
-.000.
-0.0.0
-00000
-0.0.0
-.000.
+(Orange = #eb8931)
+(HUSL Lightnesses 66, 63, 58, 54)
+#eb8931 #db7f2d #cd762a #be6d26
+.010.
+0.2.0
+12321
+0.2.0
+.010.
 
 SelectingPlayer
-LightGray
-.000.
-0.0.0
-00000
-0.0.0
-.000.
+(HUSL Lightnesses 88, 84, 80, 76)
+#dddddd #d1d1d1 #c6c6c6 #bbbbbb
+.010.
+0.2.0
+12321
+0.2.0
+.010.
+
+(peg colors are HUSL pastel Saturation 100%, Lightness 25% and 85%)
+(insides of selected pegs are 50% Saturation)
 
 Circle
-DarkGray #f6f7f1
+#3b3d1c #d4d8a8 (hue 90, yellow)
 .000.
 01110
 01110
@@ -51,7 +59,7 @@ DarkGray #f6f7f1
 .000.
 
 SelectedCircle
-Orange #f6f6f6
+#db7f2d #d4d6bf
 .000.
 01110
 01110
@@ -59,7 +67,7 @@ Orange #f6f6f6
 .000.
 
 Square
-DarkGray #ebf2f7
+#1a404e #acdbf3 (hue 225, blue)
 00000
 01110
 01110
@@ -67,7 +75,7 @@ DarkGray #ebf2f7
 00000
 
 SelectedSquare
-Orange #f0f1f0
+#db7f2d #c2d8e4
 00000
 01110
 01110
@@ -75,7 +83,7 @@ Orange #f0f1f0
 00000
 
 Triangle
-DarkGray #e7f3ef
+#1b432e #a8e1c0 (hue 145, green)
 0....
 00...
 010..
@@ -83,7 +91,7 @@ DarkGray #e7f3ef
 00000
 
 SelectedTriangle
-Orange #f0f1f0
+#db7f2d #bfdbca
 0....
 00...
 010..
@@ -91,7 +99,7 @@ Orange #f0f1f0
 00000
 
 Cross
-DarkGray
+#3b3b3b
 ..0..
 ..0..
 00000
@@ -99,7 +107,7 @@ DarkGray
 ..0..
 
 SelectedCross
-Orange
+#db7f2d
 ..0..
 ..0..
 00000
