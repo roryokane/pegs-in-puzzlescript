@@ -41,51 +41,51 @@ LightGray
 .000.
 
 Circle
-DarkGray
+DarkGray #f6f7f1
 .000.
-0...0
-0...0
-0...0
+01110
+01110
+01110
 .000.
 
 SelectedCircle
-Orange
+Orange White
 .000.
-0...0
-0...0
-0...0
+01110
+01110
+01110
 .000.
 
 Square
-DarkGray
+DarkGray #ebf2f7
 00000
-0...0
-0...0
-0...0
+01110
+01110
+01110
 00000
 
 SelectedSquare
-Orange
+Orange White
 00000
-0...0
-0...0
-0...0
+01110
+01110
+01110
 00000
 
 Triangle
-DarkGray
+DarkGray #e7f3ef
 0....
 00...
-0.0..
-0..0.
+010..
+0110.
 00000
 
 SelectedTriangle
-Orange
+Orange White
 0....
 00...
-0.0..
-0..0.
+010..
+0110.
 00000
 
 Cross
