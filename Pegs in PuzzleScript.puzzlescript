@@ -5,6 +5,7 @@ title Pegs
 author Fred Coughlin / Rory O'Kane
 homepage http://roryokane.com/
 (homepage of the original Pegs is http://www.detachedsolutions.com/puzzpack/pegs.php)
+
 background_color LightGray
 text_color Black
 key_repeat_interval 0.25 (to prevent accidental falling down pits, etc.)
