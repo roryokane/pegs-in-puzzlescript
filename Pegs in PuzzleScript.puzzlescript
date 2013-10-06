@@ -9,24 +9,88 @@ OBJECTS
 Background
 White
 
-Wall    
-Black   
+Wall
+Black
 00000
 00.00
 0.0.0
 00.00
 00000
 
-Player  
-Black   
+Player
+Black
 .000.
 0.0.0
 00000
 0.0.0
 .000.
 
-Cross  
-Black   
+SelectingPlayer
+White
+.....
+.....
+.....
+.....
+.....
+
+Circle
+Black
+.000.
+0...0
+0...0
+0...0
+.000.
+
+SelectedCircle
+Black
+.000.
+0...0
+0...0
+0...0
+.000.
+
+Square
+Black
+00000
+0...0
+0...0
+0...0
+00000
+
+SelectedSquare
+Black
+00000
+0...0
+0...0
+0...0
+00000
+
+Triangle
+Black
+0....
+00...
+0.0..
+0..0.
+00000
+
+SelectedTriangle
+Black
+0....
+00...
+0.0..
+0..0.
+00000
+
+Cross
+Black
+..0..
+..0..
+00000
+..0..
+..0..
+
+SelectedCross
+Black
 ..0..
 ..0..
 00000
@@ -40,10 +104,16 @@ Black
 LEGEND
 =======
 
+Block = Circle or Square or Triangle or Cross
+SelectedBlock = SelectedCircle or SelectedSquare or SelectedTriangle or SelectedCross
 . = Background
-# = Wall
 P = Player
-H = Hole
+X = Wall
+# = Hole
+O = Circle
+s = Square
+\ = Triangle
++ = Cross
 
 
 =======
@@ -55,28 +125,38 @@ COLLISIONLAYERS
 ================
 
 Background
-Player, Wall, Hole
+Player, Wall, Hole, Block
+SelectingPlayer, SelectedBlock
 
 ======
-RULES     
-======     
+RULES
+======
 
-([ Eyeball | ... | Player ] -> [ > Eyeball | ... | Player ] SFX0)
- 
+[ > Player | Block ] -> [ > Player | > Block ]
+
+[ > Square | Hole ] -> [ | ]
+[ > Block | Hole ] -> [ | Hole ]
+
+[ > Circle | Circle ] -> [ | ]
+[ > Triangle | Triangle ] -> [ | ]
+[ > Square | Square ] -> [ | ]
+
+[ > Cross | Cross ] [ Player ] -> [ | SelectedCircle ] [ SelectingPlayer ]
+
 ==============
 WINCONDITIONS
 ==============
 
-(there's no way to win against a floating eyeball :S )
+No Block
 
-=======     
+=======
 LEVELS
 =======
 
-#########
-#.......#
-#....H..#
-#.P.....#
-#.......#
-#.......#
-#########
+XXXXXXXXXXXX
+X..........X
+X...P..O...X
+X....++\...X
+X...s#.O...X
+X..........X
+XXXXXXXXXXXX
