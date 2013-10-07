@@ -21,8 +21,17 @@ OBJECTS
 Background
 White
 
-Wall
+SolidBlock
 #111 #444 #555 #bbb
+00000
+01310
+03230
+01310
+00000
+
+CreatedSolidBlock
+(mixed with 25% triangle colors - first color mixed with outline, the rest with fill)
+#141d18 #5d6b63 #6a7870 #b6c5bc
 00000
 01310
 03230
@@ -219,8 +228,8 @@ Hole = EmptyHole or HoleWithFallingCircle or HoleWithFallingTriangle or HoleWith
 p = NormalPlayer
 P = NormalPlayer
 ✠ = NormalPlayer
-X = Wall
-⛝ = Wall
+X = SolidBlock
+⛝ = SolidBlock
 # = EmptyHole
 ■ = EmptyHole
 o = Circle
@@ -258,7 +267,7 @@ COLLISIONLAYERS
 
 Background
 FilledHole, HoleWithSettlingSquare
-Player, Wall, Hole, Block, SelectedBlock
+Player, SolidBlock, CreatedSolidBlock, Hole, Block, SelectedBlock
 HoleTopBoundary
 HoleBottomBoundary
 HoleLeftBoundary
@@ -317,8 +326,8 @@ RIGHT [ Hole no HoleRightBoundary | no Hole ] -> [ Hole HoleRightBoundary | no H
 (some pegs disappear when combined)
 [ > Circle | Circle ] -> [ | ] sfx3
 [ > Square | Square ] -> [ | ] sfx3
-(combined triangles turn into a wall)
-[ > Triangle | Triangle ] -> [ | Wall ] sfx5
+(combined triangles turn into a solid block)
+[ > Triangle | Triangle ] -> [ | CreatedSolidBlock ] sfx5
 (combined crosses let you freely select a replacement)
 [ > Cross | Cross ] [ > Player ] -> [ | SelectedTriangle ] [ > SelectingPlayer ] sfx3
 
