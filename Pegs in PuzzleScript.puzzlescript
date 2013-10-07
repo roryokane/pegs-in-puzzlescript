@@ -162,7 +162,7 @@ FilledHole
 01110
 00000
 
-HoleTopBoundary
+HoleBoundaryUp
 #222
 00000
 .....
@@ -170,7 +170,15 @@ HoleTopBoundary
 .....
 .....
 
-HoleBottomBoundary
+HoleBoundaryRight
+#222
+....0
+....0
+....0
+....0
+....0
+
+HoleBoundaryDown
 #222
 .....
 .....
@@ -178,21 +186,13 @@ HoleBottomBoundary
 .....
 00000
 
-HoleLeftBoundary
+HoleBoundaryLeft
 #222
 0....
 0....
 0....
 0....
 0....
-
-HoleRightBoundary
-#222
-....0
-....0
-....0
-....0
-....0
 
 
 InvisibleDeadPlayer
@@ -211,7 +211,7 @@ LEGEND
 Player = NormalPlayer or SelectingPlayer or InvisibleDeadPlayer
 SelectedBlock = SelectedCircle or SelectedSquare or SelectedTriangle or SelectedCross
 Block = Circle or Square or Triangle or Cross or SelectedBlock
-HoleBoundary = HoleTopBoundary or HoleBottomBoundary or HoleLeftBoundary or HoleRightBoundary
+HoleBoundary = HoleBoundaryUp or HoleBoundaryRight or HoleBoundaryDown or HoleBoundaryLeft
 Hole = EmptyHole or HoleWithFallingCircle or HoleWithFallingTriangle or HoleWithFallingCross
 
 . = Background
@@ -259,10 +259,10 @@ COLLISIONLAYERS
 Background
 FilledHole, HoleWithSettlingSquare
 Player, Wall, Hole, Block, SelectedBlock
-HoleTopBoundary
-HoleBottomBoundary
-HoleLeftBoundary
-HoleRightBoundary
+HoleBoundaryUp
+HoleBoundaryRight
+HoleBoundaryDown
+HoleBoundaryLeft
 
 
 ======
@@ -308,10 +308,10 @@ UP [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedTria
 [ > Player | Hole ] -> [ InvisibleDeadPlayer | Hole ] sfx10 message You fell and died.
 
 (draw hole boundaries)
-UP [ Hole no HoleTopBoundary | no Hole ] -> [ Hole HoleTopBoundary | no Hole ]
-DOWN [ Hole no HoleBottomBoundary | no Hole ] -> [ Hole HoleBottomBoundary | no Hole ]
-LEFT [ Hole no HoleLeftBoundary | no Hole ] -> [ Hole HoleLeftBoundary | no Hole ]
-RIGHT [ Hole no HoleRightBoundary | no Hole ] -> [ Hole HoleRightBoundary | no Hole ]
+UP [ Hole no HoleBoundaryUp | no Hole ] -> [ Hole HoleBoundaryUp | no Hole ]
+RIGHT [ Hole no HoleBoundaryRight | no Hole ] -> [ Hole HoleBoundaryRight | no Hole ]
+DOWN [ Hole no HoleBoundaryDown | no Hole ] -> [ Hole HoleBoundaryDown | no Hole ]
+LEFT [ Hole no HoleBoundaryLeft | no Hole ] -> [ Hole HoleBoundaryLeft | no Hole ]
 [ HoleBoundary no Hole ] -> [ ]
 
 (some pegs disappear when combined)
