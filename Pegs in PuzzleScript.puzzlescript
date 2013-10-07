@@ -259,12 +259,13 @@ SOUNDS
 	
 (block interaction sounds)
 Block move 16776907
-sfx0 29154902 (destroy by combining matching blocks)
+sfx0 57315905 (destroy by combining matching blocks)
 sfx1 93422102 (combine triangles, forming a wall)
-sfx2 39221701 (push block down hole)
-sfx3 9351102 (fill hole with square block)
-sfx4 60846506 (cycle selected block)
-sfx5 57903306 (confirm selection)
+sfx2 29154902 (combine crosses, starting replacement selection)
+sfx3 39221701 (push block down hole)
+sfx4 9351102 (fill hole with square block)
+sfx5 60846506 (cycle selected block)
+sfx6 57903306 (confirm selection)
 
 (failure sounds)
 sfx9 36821508 (combined blocks don't match)
@@ -298,22 +299,22 @@ RULES
 [ Action InvisibleDeadPlayer ] -> restart
 
 (allow scrolling through selections without moving player)
-DOWN [ > SelectingPlayer ] [ SelectedTriangle ] -> [ SelectingPlayer ] [ SelectedCross ] sfx4
+DOWN [ > SelectingPlayer ] [ SelectedTriangle ] -> [ SelectingPlayer ] [ SelectedCross ] sfx5
 (simpler rules like this don't work for some reason: DOWN [ SelectedTriangle ] -> [ SelectedCross ])
-DOWN [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedSquare ] sfx4
-DOWN [ > SelectingPlayer ] [ SelectedSquare ] -> [ SelectingPlayer ] [ SelectedCircle ] sfx4
-DOWN [ > SelectingPlayer ] [ SelectedCircle ] -> [ SelectingPlayer ] [ SelectedTriangle ] sfx4
-UP [ > SelectingPlayer ] [ SelectedTriangle ] -> [ SelectingPlayer ] [ SelectedCircle ] sfx4
-UP [ > SelectingPlayer ] [ SelectedCircle ] -> [ SelectingPlayer ] [ SelectedSquare ] sfx4
-UP [ > SelectingPlayer ] [ SelectedSquare ] -> [ SelectingPlayer ] [ SelectedCross ] sfx4
-UP [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedTriangle ] sfx4
+DOWN [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedSquare ] sfx5
+DOWN [ > SelectingPlayer ] [ SelectedSquare ] -> [ SelectingPlayer ] [ SelectedCircle ] sfx5
+DOWN [ > SelectingPlayer ] [ SelectedCircle ] -> [ SelectingPlayer ] [ SelectedTriangle ] sfx5
+UP [ > SelectingPlayer ] [ SelectedTriangle ] -> [ SelectingPlayer ] [ SelectedCircle ] sfx5
+UP [ > SelectingPlayer ] [ SelectedCircle ] -> [ SelectingPlayer ] [ SelectedSquare ] sfx5
+UP [ > SelectingPlayer ] [ SelectedSquare ] -> [ SelectingPlayer ] [ SelectedCross ] sfx5
+UP [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedTriangle ] sfx5
 [ > SelectingPlayer ] -> [ SelectingPlayer ]
 
 (action confirms selection)
-[ Action SelectingPlayer ] [ SelectedCircle ] -> [ NormalPlayer ] [ Circle ] sfx5
-[ Action SelectingPlayer ] [ SelectedSquare ] -> [ NormalPlayer ] [ Square ] sfx5
-[ Action SelectingPlayer ] [ SelectedTriangle ] -> [ NormalPlayer ] [ Triangle ] sfx5
-[ Action SelectingPlayer ] [ SelectedCross ] -> [ NormalPlayer ] [ Cross ] sfx5
+[ Action SelectingPlayer ] [ SelectedCircle ] -> [ NormalPlayer ] [ Circle ] sfx6
+[ Action SelectingPlayer ] [ SelectedSquare ] -> [ NormalPlayer ] [ Square ] sfx6
+[ Action SelectingPlayer ] [ SelectedTriangle ] -> [ NormalPlayer ] [ Triangle ] sfx6
+[ Action SelectingPlayer ] [ SelectedCross ] -> [ NormalPlayer ] [ Cross ] sfx6
 
 (player can push blocks)
 [ > Player | Block ] -> [ > Player | > Block ]
@@ -327,10 +328,10 @@ UP [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedTria
 [ HoleWithFallingCross ] -> [ EmptyHole ]
 [ HoleWithFallingPlayer ] -> [ EmptyHole ] message You fell and died.
 (trigger falling animations:)
-[ > Square | Hole ] -> [ | HoleWithSettlingSquare ] sfx3 again
-[ > Circle | Hole ] -> [ | HoleWithFallingCircle ] sfx2 again
-[ > Triangle | Hole ] -> [ | HoleWithFallingTriangle ] sfx2 again
-[ > Cross | Hole ] -> [ | HoleWithFallingCross ] sfx2 again
+[ > Square | Hole ] -> [ | HoleWithSettlingSquare ] sfx4 again
+[ > Circle | Hole ] -> [ | HoleWithFallingCircle ] sfx3 again
+[ > Triangle | Hole ] -> [ | HoleWithFallingTriangle ] sfx3 again
+[ > Cross | Hole ] -> [ | HoleWithFallingCross ] sfx3 again
 [ > Player | Hole ] -> [ InvisibleDeadPlayer | HoleWithFallingPlayer ] sfx10 again
 
 (draw hole boundaries)
@@ -347,7 +348,7 @@ LEFT [ Hole no HoleBoundaryLeft | no Hole ] -> [ Hole HoleBoundaryLeft | no Hole
 (combined triangles turn into a solid block)
 [ > Triangle | Triangle ] -> [ | CreatedSolidBlock ] sfx1
 (combined crosses let you freely select a replacement)
-[ > Cross | Cross ] [ > Player ] -> [ | SelectedTriangle ] [ > SelectingPlayer ] sfx0
+[ > Cross | Cross ] [ > Player ] -> [ | SelectedTriangle ] [ > SelectingPlayer ] sfx2
 
 (player gets scolded if non-matching pegs are combined)
 [ > Circle | Block no Circle ] -> [ Circle | Block ] sfx9 message They don't match.
