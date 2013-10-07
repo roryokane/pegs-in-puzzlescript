@@ -21,7 +21,7 @@ OBJECTS
 Background
 White
 
-SolidBlock
+NormalSolidBlock
 #111 #444 #555 #bbb
 00000
 01310
@@ -220,6 +220,7 @@ LEGEND
 Player = NormalPlayer or SelectingPlayer or InvisibleDeadPlayer
 SelectedBlock = SelectedCircle or SelectedSquare or SelectedTriangle or SelectedCross
 Block = Circle or Square or Triangle or Cross or SelectedBlock
+SolidBlock = NormalSolidBlock or CreatedSolidBlock
 HoleBoundary = HoleTopBoundary or HoleBottomBoundary or HoleLeftBoundary or HoleRightBoundary
 Hole = EmptyHole or HoleWithFallingCircle or HoleWithFallingTriangle or HoleWithFallingCross
 
@@ -228,8 +229,8 @@ Hole = EmptyHole or HoleWithFallingCircle or HoleWithFallingTriangle or HoleWith
 p = NormalPlayer
 P = NormalPlayer
 ✠ = NormalPlayer
-X = SolidBlock
-⛝ = SolidBlock
+X = NormalSolidBlock
+⛝ = NormalSolidBlock
 # = EmptyHole
 ■ = EmptyHole
 o = Circle
@@ -267,7 +268,7 @@ COLLISIONLAYERS
 
 Background
 FilledHole, HoleWithSettlingSquare
-Player, SolidBlock, CreatedSolidBlock, Hole, Block, SelectedBlock
+Player, SolidBlock, Hole, Block, SelectedBlock
 HoleTopBoundary
 HoleBottomBoundary
 HoleLeftBoundary
