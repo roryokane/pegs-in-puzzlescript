@@ -155,6 +155,15 @@ Black #301b1f
 00100
 00000
 
+HoleWithFallingPlayer
+(player colors are based on the second and fourth normal colors)
+Black #6e3d11 #61350e
+00000
+00100
+01210
+00100
+00000
+
 HoleWithSettlingSquare
 #499cbb #d6ecf9 (lightened by 45%)
 00000
@@ -221,8 +230,8 @@ Player = NormalPlayer or SelectingPlayer or InvisibleDeadPlayer
 SelectedBlock = SelectedCircle or SelectedSquare or SelectedTriangle or SelectedCross
 Block = Circle or Square or Triangle or Cross or SelectedBlock
 SolidBlock = NormalSolidBlock or CreatedSolidBlock
+Hole = EmptyHole or HoleWithFallingCircle or HoleWithFallingTriangle or HoleWithFallingCross or HoleWithFallingPlayer
 HoleBoundary = HoleBoundaryUp or HoleBoundaryRight or HoleBoundaryDown or HoleBoundaryLeft
-Hole = EmptyHole or HoleWithFallingCircle or HoleWithFallingTriangle or HoleWithFallingCross
 
 . = Background
 · = Background
@@ -304,17 +313,19 @@ UP [ > SelectingPlayer ] [ SelectedCross ] -> [ SelectingPlayer ] [ SelectedTria
 [ > Player | Block ] -> [ > Player | > Block ]
 
 (square pegs fill holes; other pegs fall in and disappear)
+(when you fall down a hole, you must reset or undo)
+(finish falling animations:)
 [ HoleWithSettlingSquare ] -> [ FilledHole ]
 [ HoleWithFallingCircle ] -> [ EmptyHole ]
 [ HoleWithFallingTriangle ] -> [ EmptyHole ]
 [ HoleWithFallingCross ] -> [ EmptyHole ]
+[ HoleWithFallingPlayer ] -> [ EmptyHole ] message You fell and died.
+(trigger falling animations:)
 [ > Square | Hole ] -> [ | HoleWithSettlingSquare ] sfx0 again
 [ > Circle | Hole ] -> [ | HoleWithFallingCircle ] sfx4 again
 [ > Triangle | Hole ] -> [ | HoleWithFallingTriangle ] sfx4 again
 [ > Cross | Hole ] -> [ | HoleWithFallingCross ] sfx4 again
-
-(when you fall down a hole, you must reset or undo)
-[ > Player | Hole ] -> [ InvisibleDeadPlayer | Hole ] sfx10 message You fell and died.
+[ > Player | Hole ] -> [ InvisibleDeadPlayer | HoleWithFallingPlayer ] sfx10 again
 
 (draw hole boundaries)
 UP [ Hole no HoleBoundaryUp | no Hole ] -> [ Hole HoleBoundaryUp | no Hole ]
