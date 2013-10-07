@@ -17,26 +17,28 @@ OBJECTS
 ========
 
 (some colors chosen using HUSL: http://boronine.com/husl/)
+(also mixed some colors using http://www.colorhexa.com/)
 
 Background
 White
 
 NormalSolidBlock
-#111 #444 #555 #bbb
-00000
-01310
-03230
-01310
-00000
+#111 #222 #444 #555 #bbb
+10001
+02420
+04340
+02420
+10001
 
 CreatedSolidBlock
-(mixed with 25% triangle colors - first color mixed with outline, the rest with fill)
-#141d18 #5d6b63 #6a7870 #b6c5bc
-00000
-01310
-03230
-01310
-00000
+(mixed with 25% triangle colors)
+(first two colors mixed with triangle outline, the rest with fill)
+#141d18 #202a25 #5d6b63 #6a7870 #b6c5bc
+10001
+02420
+04340
+02420
+10001
 
 NormalPlayer
 (Orange = #eb8931)
