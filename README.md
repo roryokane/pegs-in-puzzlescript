@@ -5,7 +5,9 @@ The game Pegs for the TI-83+ graphing calculator, ported to the [PuzzleScript en
 
 ![Pegs title screen](screenshots/title.png)
 
-![a game in progress](screenshots/level_4_in_progress.png)
+![animation of gameplay in Level 1](screenshots/level_1_gameplay_animated.gif)
+
+![a game in progress, in Level 4](screenshots/level_4_in_progress.png)
 
 [Play the game online](http://www.puzzlescript.net/play.html?p=87985a8a36b10c3ec386), or [edit it live](http://www.puzzlescript.net/editor.html?hack=87985a8a36b10c3ec386) in the PuzzleScript editor.
 
