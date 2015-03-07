@@ -183,7 +183,7 @@ FilledHole
 00000
 
 HoleBoundaryUp
-#222
+#1a1a1a (halfway between #111 and #222)
 00000
 .....
 .....
@@ -191,7 +191,7 @@ HoleBoundaryUp
 .....
 
 HoleBoundaryRight
-#222
+#1a1a1a
 ....0
 ....0
 ....0
@@ -199,7 +199,7 @@ HoleBoundaryRight
 ....0
 
 HoleBoundaryDown
-#222
+#1a1a1a
 .....
 .....
 .....
@@ -207,7 +207,7 @@ HoleBoundaryDown
 00000
 
 HoleBoundaryLeft
-#222
+#1a1a1a
 0....
 0....
 0....
