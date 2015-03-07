@@ -369,15 +369,7 @@ LEVELS
 =======
 
 (help)
-message To beat each level you must
-message destroy all of the pegs.
-message If two like pegs are
-message pushed into each other
-message they disappear,
-message except for triangles
-message which form a solid block
-message and plusses which allow you to
-message choose a replacement block.
+message To beat each level you must destroy all of the pegs.  If two like pegs are pushed into each other they disappear, except for triangles which form a solid block and plusses which allow you to choose a replacement block.
 
 XXXXXXXXXXXX
 X··········X
