@@ -237,7 +237,6 @@ HoleBoundary = HoleBoundaryUp or HoleBoundaryRight or HoleBoundaryDown or HoleBo
 
 . = Background
 · = Background
-p = NormalPlayer
 P = NormalPlayer
 ✠ = NormalPlayer
 X = NormalSolidBlock
@@ -249,7 +248,6 @@ o = Circle
 s = Square
 □ = Square
 \ = Triangle
-< = Triangle
 ◺ = Triangle
 + = Cross
 ✚ = Cross
@@ -384,7 +382,7 @@ message choose a replacement block.
 XXXXXXXXXXXX
 X··········X
 X···P··o···X
-X····++<···X
+X····++\···X
 X···□■·o···X
 X··········X
 X··········X
@@ -393,53 +391,53 @@ XXXXXXXXXXXX
 message Nice Pegging!!!
 
 XXXXXXXXXXXX
-XXX···<<···X
+XXX···\\···X
 XXX···X····X
 XXX···XX···X
-P···<<oo···X
+P···\\oo···X
 XXX···XX···X
 XXX···X····X
-XXX···<<···X
+XXX···\\···X
 
 message Nice Pegging!!!
 
 XXXXXXXXXXXX
 XXXXXXXXXXXX
-X·····<·P···
-X·XX·XX·XX<X
-X··<·······X
-XXXXXXXXXX<X
+X·····\·P···
+X·XX·XX·XX\X
+X··\·······X
+XXXXXXXXXX\X
 XXXXXXXXXXXX
 XXXXXXXXXXXX
 
 message Nice Pegging!!!
 
 XXXXXXXXXXXX
-■·□·<·<····X
-■·+·o·<····X
-■·o·□P<····X
-■·<·□·<·+··X
-■·□·o·<····X
-■·o·□·<····X
+■·□·\·\····X
+■·+·o·\····X
+■·o·□P\····X
+■·\·□·\·+··X
+■·□·o·\····X
+■·o·□·\····X
 XXXXXXXXXXXX
 
 message Nice Pegging!!!
 
 ·■■·□■··■···
-·■■·□□··■··<
-<■■·■■■·X<<<
-·■■·■□■·X<·<
+·■■·□□··■··\
+\■■·■■■·X\\\
+·■■·■□■·X\·\
 ·■■·■P■o■···
-<■■·■■■·■···
+\■■·■■■·■···
 ·■■·□···■···
 ·■■··o··■oo·
 
 message Nice Pegging!!!
 
 P···········
-<·········+·
-<··<···<<···
-·XX<XXXXXXX·
+\·········+·
+\··\···\\···
+·XX\XXXXXXX·
 ············
 ·XXXX·XX·XXX
 ·+······o□■·
@@ -450,8 +448,8 @@ message Nice Pegging!!!
 XXXX··XXXXXX
 XXX■··□■·XXX
 XXXX·XoX·XXX
-XXX<++P□<■XX
-XXXX·X<X···X
+XXX\++P□\■XX
+XXXX·X\X···X
 XXXX··o··X·X
 XXXXXXX·XX·X
 XXXXXXX····X
@@ -460,76 +458,76 @@ message Nice Pegging!!!
 
 XXXXXXXXXXXX
 ··+++++□++··
-··+++<++o+··
-P·+++<++□+··
+··+++\++o+··
+P·+++\++□+··
 ··++□o++++··
-··++o<++++··
-··++<□++++··
+··++o\++++··
+··++\□++++··
 XXXXXXXXXXXX
 
 message Nice Pegging!!!
 
 ····XX······
 ·+··XX······
-····<□□+·XX·
-·X··<X···XXX
-···<<PX····<
-····<X··XXXX
-·+X·<oo···+·
+····\□□+·XX·
+·X··\X···XXX
+···\\PX····\
+····\X··XXXX
+·+X·\oo···+·
 ····□X······
 
 message Nice Pegging!!!
 
-XXXX<XXX····
+XXXX\XXX····
 XXXX·XXX···P
 ··□·■■■···+·
 ·++·■■■·□+□·
 ·++·■■■·□+□·
 ····■■■·+···
 XXXXX·XX····
-XXXXX<XX····
+XXXXX\XX····
 
 message Nice Pegging!!!
 
 XPX·XX■··XXX
-X···o□■■·<<·
-X<X<·X■··<<·
-X··<·X···++·
-X<X··X·X·++·
+X···o□■■·\\·
+X\X\·X■··\\·
+X··\·X···++·
+X\X··X·X·++·
 ·····X·XX·X·
 ·+□+·X·X····
-····<<<XXXXX
+····\\\XXXXX
 
 message Nice Pegging!!!
 
 P·····XXXXXX
-X<X<X<XX···X
+X\X\X\XX···X
 ······X··X·X
-X<X<X<X····X
+X\X\X\X····X
 ······XXoo■X
-X<X<X<XX·<<X
-··········<X
+X\X\X\XX·\\X
+··········\X
 X·XXXXXX··XX
 
 message Nice Pegging!!!
 
 XXXXXXXXXXXX
-··□·<·o·□··■
-··<·o·<·□··■
+··□·\·o·□··■
+··\·o·\·□··■
 P·+·□·o·□··■
-··o·□·<·□··■
-··□·<·o·□··■
-··+·+·<·□··■
+··o·□·\·□··■
+··□·\·o·□··■
+··+·+·\·□··■
 XXXXXXXXXXXX
 
 message Nice Pegging!!!
 
 XXXXX··X··XX
-XX·<··□··<·X
+XX·\··□··\·X
 X■··oX·XX··X
 XXX··+o+··XX
 XX··XX·Xo··■
-XX·<··□···PX
+XX·\··□···PX
 XX··X··XXXXX
 XXXXXXXXXXXX
 
@@ -537,7 +535,7 @@ message Nice Pegging!!!
 
 ···■·■·■·■·X
 ···■·■·■·■·X
-·+□■·■·■·■·<
+·+□■·■·■·■·\
 ·□·■·■□■·■·X
 ·+·■·■·■·■·X
 P··■□■·■·■·X
