@@ -287,7 +287,8 @@ FilledHole, HoleWithSettlingSquare
 Player, SolidBlock, Hole, Block, SelectedBlock
 HoleBoundaryUp
 HoleBoundaryRight
-HoleBoundaryDown, HoleBoundaryLeft (ran out of unique layers; down boundaries will be overwritten sometimes)
+HoleBoundaryLeft
+HoleBoundaryDown
 
 
 ======
